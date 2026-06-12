@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Track Complaint</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+
+    <div class="container3">
+        <h1>Track Your Complaints</h1>
+
+    <table class="complaint-table">
+    <tr>
+        <th>ID</th>
+        <th>Category</th>
+        <th>Description</th>
+        <th>Status</th>
+    </tr>
+
+    {% for complaint in complaints %}
+<tr>
+    <td>{{ loop.index }}</td>
+    <td>{{ complaint[3] }}</td>
+    <td>
+    {{ complaint[4][:30] }}...
+    <a href="/view_complaint/{{ complaint[0] }}" class="view-btn">View</a>
+</td>
+
+    <td>{{ complaint[5] }}</td>
+</tr>
+{% endfor %}
+
+</table>
+</table>
+
+        <br>
+        <a href="/user_dashboard">
+            <button class="btn user-btn">Back to Dashboard</button>
+        </a>
+
+    </div>
+
+</body>
+</html>

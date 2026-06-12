@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Complaint</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="form-box5">
+    <h2>Complaint Details</h2>
+
+    <p><strong>Name:</strong> {{ complaint[1] }}</p>
+    <p><strong>Email:</strong> {{ complaint[2] }}</p>
+    <p><strong>Category:</strong> {{ complaint[3] }}</p>
+    <p><strong>Description:</strong></p>
+    <div class="description-box">
+        {{ complaint[4] }}
+    </div>
+
+    <br>
+    <a href="javascript:history.back()">
+        <button class="btn admin-btn">Back</button>
+    </a>
+</div>
+
+</body>
+</html>

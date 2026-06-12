@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Login</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <a href="/" class="home-btn">🏠</a>
+
+    <div class="form-box2">
+        <h1>User Login</h1>
+            <form method="POST" action="/user_login">
+            <div class="input-group">
+    <input type="text" name="username" placeholder="Username" required>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% for category, message in messages %}
+            {% if category == 'username' %}
+                <span class="error-icon">❌</span>
+            {% endif %}
+        {% endfor %}
+    {% endwith %}
+</div>
+
+<div class="input-group">
+    <input type="password" name="password" placeholder="Password" required>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% for category, message in messages %}
+            {% if category == 'password' %}
+                <span class="error-icon">❌</span>
+            {% endif %}
+        {% endfor %}
+    {% endwith %}
+</div>
+            <button type="submit" class="btn user-btn">Login</button>
+            <p>Don't have an account? <a href="/user_register">Register here</a></p>
+        </form>
+    </div>
+
+</body>
+</html>

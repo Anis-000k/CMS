@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Complaint</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <a href="/user_dashboard" class="home-btn">←</a>
+
+    <div class="form-box4">
+    <h1>Submit a Complaint</h1>
+
+        <form method="POST" action="/add_complaint">
+        <input type="text" name="name" placeholder="Your Name" required><br>
+        <input type="email" name="email" placeholder="Your Email" required><br>
+
+        <select name="category" required>
+            <option value="">Select Category</option>
+            <option value="Classroom issue">Classroom issue</option>
+            <option value="Teacher related">Teacher related</option>
+            <option value="Washroom / cleaning">Washroom / cleaning</option>
+            <option value="WiFi problem">WiFi problem</option>
+            <option value="Harassment report">Harassment report</option>
+            <option value="Suggestion">Suggestion</option>
+            
+        </select><br>
+
+        <textarea class="des" name="description" placeholder="Enter description..." rows="4" required></textarea>
+
+        <button type="submit" class="btn user-btn">Submit Complaint</button>
+        
+     </form>
+    </div>
+</body>
+</html>
